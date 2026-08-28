@@ -364,7 +364,7 @@
     position:fixed; inset:0; z-index:1000;
     background:transparent;
     opacity:1; visibility:visible;
-    transition:opacity .7s var(--ease), transform .7s var(--ease), visibility .7s;
+    transition:opacity .5s var(--ease), transform .5s var(--ease), visibility .5s;
   }
   .splash img{
     width:100vw;
@@ -387,7 +387,7 @@
 <body>
 
 <div class="splash" id="splash" aria-hidden="true">
-  <img src="ChatGPT Image 28_08_2026, 10_52_49.png" alt="">
+  <img src="boneca-yas.png" alt="">
 </div>
 
 <header id="topo">
@@ -691,7 +691,7 @@
         unlockScroll();
       };
       lockScroll();
-      setTimeout(hideSplash, 2500);
+      setTimeout(hideSplash, 1000);
     }
   } catch(err) { console.error('Splash de boas-vindas falhou:', err); }
 </script>
