@@ -192,13 +192,20 @@
   .marquee{
     border-top:1px solid var(--line); border-bottom:1px solid var(--line);
     background:var(--panel); padding:.7rem 0; overflow:hidden;
-    display:flex; gap:3rem; justify-content:center; flex-wrap:wrap;
+  }
+  .marquee-track{
+    display:flex; align-items:center; gap:2.4rem; width:max-content;
+    animation:marqueeSlide 28s linear infinite;
   }
   .marquee span{
     font-family:'Caveat',cursive; font-size:1.5rem; color:var(--caramel);
-    display:flex; align-items:center; gap:1.5rem;
+    display:flex; align-items:center; gap:1.5rem; white-space:nowrap;
   }
   .marquee span::after{content:"✦"; color:var(--gold); font-size:1rem;}
+  @keyframes marqueeSlide{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
 
   section{padding:2.6rem 0;}
   section[id]{scroll-margin-top:70px;}
@@ -433,6 +440,7 @@
   }
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+    .marquee-track{animation:none;}
   }
 </style>
 </head>
@@ -483,12 +491,20 @@
 </section>
 
 <div class="marquee" aria-hidden="true">
-  <span>Feito à mão</span>
-  <span>Doce de leite artesanal</span>
-  <span>Feito sob reserva</span>
-  <span>Tucumã/PA</span>
-  <span>Reserve o seu</span>
-  <span>Com muito carinho</span>
+  <div class="marquee-track">
+    <span>Feito à mão</span>
+    <span>Doce de leite artesanal</span>
+    <span>Feito sob reserva</span>
+    <span>Tucumã/PA</span>
+    <span>Reserve o seu</span>
+    <span>Com muito carinho</span>
+    <span>Feito à mão</span>
+    <span>Doce de leite artesanal</span>
+    <span>Feito sob reserva</span>
+    <span>Tucumã/PA</span>
+    <span>Reserve o seu</span>
+    <span>Com muito carinho</span>
+  </div>
 </div>
 
 <section id="sobre">
