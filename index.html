@@ -317,26 +317,6 @@
   .steps .step:nth-child(4){transition-delay:.26s;}
   .menu-card:hover,.step:hover{transition-delay:0s;}
 
-  /* ---------- splash de boas-vindas ---------- */
-  .splash{
-    position:fixed; inset:0; z-index:1000;
-    background:transparent;
-    opacity:1; visibility:visible;
-    transition:opacity .5s var(--ease), transform .5s var(--ease), visibility .5s;
-  }
-  .splash img{
-    width:100vw;
-    height:100vh;
-    object-fit:contain;
-    display:block;
-    background:transparent;
-  }
-  .splash.hidden{
-    opacity:0;
-    transform:translateY(-4vh);
-    visibility:hidden;
-    pointer-events:none;
-  }
   @media (max-width:820px){
     section{padding:1.8rem 0;}
     .section-head{margin-bottom:1rem;}
@@ -349,10 +329,6 @@
 </style>
 </head>
 <body>
-
-<div class="splash" id="splash" aria-hidden="true">
-  <img src="boneca-yas.png" alt="">
-</div>
 
 <header id="topo">
   <div class="header-inner">
@@ -596,22 +572,6 @@
     window.addEventListener('scroll', onScroll, {passive:true});
     onScroll();
   } catch(err) { console.error('Header falhou:', err); }
-
-  // ---- Splash de boas-vindas ----
-  try {
-    const splash = document.getElementById('splash');
-    if (splash) {
-      const lockScroll = () => { document.body.style.overflow = 'hidden'; };
-      const unlockScroll = () => { document.body.style.overflow = ''; };
-      const hideSplash = () => {
-        if (splash.classList.contains('hidden')) return;
-        splash.classList.add('hidden');
-        unlockScroll();
-      };
-      lockScroll();
-      setTimeout(hideSplash, 3500);
-    }
-  } catch(err) { console.error('Splash de boas-vindas falhou:', err); }
 </script>
 
 </body>
