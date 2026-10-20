@@ -265,9 +265,16 @@
   .contact h2{color:#fdf6ea; font-size:clamp(1.9rem, 4.4vw, 2.7rem); margin:.6rem 0 .8rem;}
   .contact p{color:rgba(253,246,234,.85); max-width:480px; margin:0 auto 1.3rem;}
   .contact .cta-row{justify-content:center;}
-  .contact .btn-primary{background:var(--bg); color:var(--caramel-deep);}
-  .contact .btn-ghost{color:#fdf6ea; border-color:rgba(253,246,234,.3);}
-  .contact .btn-ghost:hover{border-color:var(--gold-light); color:var(--gold-light);}
+  .btn-whatsapp{
+    background:#25D366; color:#fff; border:none;
+    box-shadow:0 16px 34px -14px rgba(37,211,102,.55);
+  }
+  .btn-whatsapp:hover{background:#1ebe57; color:#fff; transform:translateY(-3px); box-shadow:0 22px 44px -14px rgba(37,211,102,.7);}
+  .btn-instagram{
+    background:linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7); color:#fff; border:none;
+    box-shadow:0 16px 34px -14px rgba(238,42,123,.5);
+  }
+  .btn-instagram:hover{color:#fff; transform:translateY(-3px); box-shadow:0 22px 44px -14px rgba(98,40,215,.55);}
 
   footer{
     padding:1.2rem 5vw; text-align:center; color:var(--ink-soft); font-size:.8rem;
@@ -486,8 +493,8 @@
     <h2>Doce de leite bom<br>é o feito com carinho.</h2>
     <p>Nossos doces são feitos sob reserva. Chama no WhatsApp e garante o seu, ou dá uma olhada nos doces mais recentes no Instagram.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://wa.me/5594992164426?text=Olá!%20Quero%20reservar%20um%20doce." target="_blank" rel="noopener">Reservar no WhatsApp</a>
-      <a class="btn btn-ghost" href="https://www.instagram.com/cantinho_doce_da_yas/" target="_blank" rel="noopener">@cantinho_doce_da_yas</a>
+      <a class="btn btn-whatsapp" href="https://wa.me/5594992164426?text=Olá!%20Quero%20reservar%20um%20doce." target="_blank" rel="noopener">Reservar no WhatsApp</a>
+      <a class="btn btn-instagram" href="https://www.instagram.com/cantinho_doce_da_yas/" target="_blank" rel="noopener">@cantinho_doce_da_yas</a>
     </div>
   </div>
 </section>
