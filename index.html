@@ -124,11 +124,19 @@
   .btn-ghost{color:var(--caramel-deep); border:1px solid var(--line);}
   .btn-ghost:hover{transform:translateY(-3px); border-color:var(--gold); color:var(--caramel);}
 
-  .hero-photo{
-    width:min(42vw, 420px);
-    margin:0;
+  .hero-inner{
+    display:grid; grid-template-columns:min(42vw, 380px) 1fr; gap:2.2rem;
+    align-items:center; padding:1.2rem 0;
   }
+  .hero-photo{width:100%; margin:0;}
   .hero-photo img{width:100%; height:auto; display:block; object-fit:contain;}
+  .hero-story h2{
+    font-size:clamp(1.55rem, 3vw, 2.1rem); margin-bottom:.8rem; color:var(--caramel-deep);
+  }
+  .hero-story p{
+    color:var(--ink-soft); font-size:.98rem; line-height:1.7; margin-bottom:.75rem;
+  }
+  .hero-story p:last-child{margin-bottom:0;}
   .section-head p{
     color:var(--ink-soft); margin-top:.85rem; font-size:1.02rem;
   }
@@ -143,6 +151,7 @@
   .reserva-banner p{color:var(--ink-soft); max-width:500px; margin:0 auto .9rem;}
   @media (max-width:900px){
     .hero{padding:0;}
+    .hero-inner{grid-template-columns:1fr; gap:1.1rem; padding:1rem 0 1.2rem;}
     .hero-photo{width:min(72vw, 280px);}
     .marquee-top{margin-top:64px;}
   }
@@ -370,8 +379,18 @@
 
 <section class="hero">
   <div class="wrap">
-    <div class="hero-photo">
-      <img src="yas-hero.jpg" alt="Yasmin com o Doce da Yas">
+    <div class="hero-inner">
+      <div class="hero-photo">
+        <img src="yas-hero.jpg" alt="Yasmin com o Doce da Yas">
+      </div>
+      <div class="hero-story">
+        <h2>A história do Doce da Yas</h2>
+        <p>O Doce da Yas nasceu em 2024, quando a Yasmin, aos 22 anos, decidiu dar o primeiro passo para realizar o sonho de ter seu próprio negócio. No começo, as coisas não saíram como ela esperava, e ela precisou dar uma pausa. Mas desistir nunca foi uma opção.</p>
+        <p>Ela aproveitou esse tempo para aprender mais, fez um curso e buscou melhorar ainda mais seus doces.</p>
+        <p>Em abril de 2026, voltou com mais experiência, fé e coragem, colocando Deus à frente de cada passo. E foi assim que até uma receita que deu errado acabou se transformando em um dos queridinhos da casa: o nosso doce personalizado!</p>
+        <p>Hoje, ela só tem a agradecer a cada cliente que confia no seu trabalho e a cada encomenda que faz parte dessa história.</p>
+        <p>Porque, às vezes, aquilo que parece dar errado acaba se tornando algo especial. E um sonho pode até precisar de uma pausa, mas isso não significa que ele chegou ao fim.</p>
+      </div>
     </div>
   </div>
 </section>
