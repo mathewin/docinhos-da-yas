@@ -107,7 +107,7 @@
   /* ---------- hero ---------- */
   .hero{
     position:relative; overflow:hidden;
-    padding:5.4rem 0 0;
+    padding:0;
     background:var(--bg);
   }
   .cta-row{display:flex; gap:1rem; flex-wrap:wrap;}
@@ -142,8 +142,9 @@
   .reserva-banner h3{font-size:1.4rem; margin-bottom:.55rem;}
   .reserva-banner p{color:var(--ink-soft); max-width:500px; margin:0 auto .9rem;}
   @media (max-width:900px){
-    .hero{padding:4.6rem 0 0;}
+    .hero{padding:0;}
     .hero-photo{width:min(72vw, 280px);}
+    .marquee-top{margin-top:64px;}
   }
 
   /* ---------- marca/faixa ---------- */
@@ -151,10 +152,12 @@
     border-top:1px solid var(--line); border-bottom:1px solid var(--line);
     background:var(--panel); padding:.7rem 0; overflow:hidden;
   }
+  .marquee-top{margin-top:72px;}
   .marquee-track{
     display:flex; align-items:center; gap:2.4rem; width:max-content;
     animation:marqueeSlide 28s linear infinite;
   }
+  .marquee-track.reverse{animation-name:marqueeSlideReverse;}
   .marquee span{
     font-family:'Caveat',cursive; font-size:1.5rem; color:var(--caramel);
     display:flex; align-items:center; gap:1.5rem; white-space:nowrap;
@@ -163,6 +166,10 @@
   @keyframes marqueeSlide{
     from{transform:translateX(0);}
     to{transform:translateX(-50%);}
+  }
+  @keyframes marqueeSlideReverse{
+    from{transform:translateX(-50%);}
+    to{transform:translateX(0);}
   }
 
   section{padding:2.6rem 0;}
@@ -336,6 +343,23 @@
     </nav>
   </div>
 </header>
+
+<div class="marquee marquee-top" aria-hidden="true">
+  <div class="marquee-track reverse">
+    <span>Feito à mão</span>
+    <span>Doce de leite artesanal</span>
+    <span>Feito sob reserva</span>
+    <span>Tucumã/PA</span>
+    <span>Reserve o seu</span>
+    <span>Com muito carinho</span>
+    <span>Feito à mão</span>
+    <span>Doce de leite artesanal</span>
+    <span>Feito sob reserva</span>
+    <span>Tucumã/PA</span>
+    <span>Reserve o seu</span>
+    <span>Com muito carinho</span>
+  </div>
+</div>
 
 <section class="hero">
   <div class="wrap">
