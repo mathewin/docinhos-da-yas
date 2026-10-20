@@ -173,62 +173,6 @@
   .center .eyebrow{justify-content:center;}
   .center .eyebrow::before{display:none;}
 
-  /* ---------- sobre / carrossel de texto ---------- */
-  .historia-wrap{max-width:720px; margin:0 auto; position:relative;}
-  .historia{
-    position:relative; overflow:hidden;
-    min-height:240px;
-  }
-  .historia-track{
-    display:flex; transition:transform .55s var(--ease);
-  }
-  .historia-slide{
-    flex:0 0 100%; padding:0 3.4rem;
-    text-align:center;
-  }
-  .historia-slide .fase{
-    display:inline-block; margin-bottom:1rem;
-    font-size:.68rem; letter-spacing:.28em; text-transform:uppercase;
-    color:var(--caramel); font-weight:700;
-  }
-  .historia-slide h3{
-    font-size:clamp(1.55rem, 3.4vw, 2.15rem); line-height:1.22;
-    margin-bottom:1.2rem; color:var(--caramel-deep);
-  }
-  .historia-slide p{
-    color:var(--ink-soft); font-size:1.05rem; line-height:1.75;
-    margin:0 auto 1rem; max-width:560px;
-  }
-  .historia-slide p:last-child{margin-bottom:0;}
-  .historia-nav{
-    position:absolute; top:50%; transform:translateY(-50%);
-    width:44px; height:44px; border-radius:50%;
-    background:var(--panel); color:var(--caramel-deep);
-    border:1px solid var(--line); cursor:pointer;
-    display:flex; align-items:center; justify-content:center;
-    font-size:1.25rem; box-shadow:var(--shadow-sm);
-    transition:background .3s, transform .3s, color .3s;
-    z-index:3;
-  }
-  .historia-nav:hover{background:var(--gold); color:#fff; transform:translateY(-50%) scale(1.06);}
-  .historia-prev{left:0;}
-  .historia-next{right:0;}
-  .historia-dots{display:flex; gap:.5rem; justify-content:center; margin-top:1rem; flex-wrap:wrap;}
-  .historia-dots button{
-    width:8px; height:8px; border-radius:4px; padding:0; cursor:pointer;
-    background:var(--line); border:1px solid var(--gold-light);
-    transition:all .35s var(--ease);
-  }
-  .historia-dots button.active{background:var(--gold); width:26px;}
-  .historia-count{
-    text-align:center; margin-top:.9rem; color:var(--ink-soft);
-    font-size:.78rem; letter-spacing:.16em; text-transform:uppercase;
-  }
-  @media (max-width:640px){
-    .historia-slide{padding:0 2.6rem;}
-    .historia-nav{width:38px; height:38px;}
-  }
-
   /* ---------- cardápio ---------- */
   .menu{background:var(--bg-soft); position:relative;}
   .menu::before{
@@ -385,7 +329,6 @@
     <button class="nav-toggle" aria-label="Abrir menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
     <nav>
       <ul>
-        <li><a href="#sobre">Sobre</a></li>
         <li><a href="#doces">Nossos doces</a></li>
         <li><a href="#pedido">Como pedir</a></li>
         <li><a href="#contato">Contato</a></li>
@@ -418,69 +361,6 @@
     <span>Com muito carinho</span>
   </div>
 </div>
-
-<section id="sobre">
-  <div class="wrap">
-    <div class="section-head center reveal">
-      <span class="eyebrow">A história</span>
-      <h2>Sobre a Yas</h2>
-    </div>
-    <div class="historia-wrap reveal">
-      <button class="historia-nav historia-prev" id="historia-prev" aria-label="Fase anterior">&#8249;</button>
-      <div class="historia" id="historia">
-        <div class="historia-track" id="historia-track">
-          <article class="historia-slide">
-            <span class="fase">O sonho</span>
-            <h3>Antes de existir o Doce da Yas, existia um sonho.</h3>
-            <p>Eu sou a Yasmin, tenho 22 anos e sou a pessoa por trás do Doce da Yas.</p>
-          </article>
-          <article class="historia-slide">
-            <span class="fase">O começo de um sonho — 2024</span>
-            <h3>O Doce da Yas nasceu em 2024.</h3>
-            <p>Foi quando decidi dar os primeiros passos na realização de um sonho: ter meu primeiro negócio.</p>
-            <p>Comecei a vender doces com muito carinho, dedicação e esperança, mas, com o passar do tempo, as coisas não aconteceram como eu imaginava e precisei parar.</p>
-            <p>Mesmo assim, continuei acreditando que aquele sonho ainda poderia acontecer. E, para me preparar ainda mais e oferecer produtos com muito mais qualidade, fiz um curso para me especializar.</p>
-          </article>
-          <article class="historia-slide">
-            <span class="fase">Uma pausa, mas não o fim</span>
-            <h3>Achei que aquele sonho tinha chegado ao fim.</h3>
-            <p>Por um momento, achei que aquele sonho tinha chegado ao fim, mas Deus não permitiu que ele morresse dentro de mim.</p>
-          </article>
-          <article class="historia-slide">
-            <span class="fase">O recomeço — Abril de 2026</span>
-            <h3>Em abril de 2026, decidi recomeçar.</h3>
-            <p>Dessa vez, com mais fé, coragem, experiência e, acima de tudo, com um propósito.</p>
-            <p>Voltei a fazer aquilo que amo, acreditando novamente no meu sonho e colocando Deus à frente de cada passo.</p>
-          </article>
-          <article class="historia-slide">
-            <span class="fase">O doce personalizado</span>
-            <h3>Como surgiu o doce personalizado?</h3>
-            <p>Às vezes, aquilo que parece dar errado é justamente o começo de algo incrível.</p>
-            <p>O nosso doce personalizado nasceu através de uma receita que não saiu como planejado. O que poderia ter sido apenas um erro se transformou em uma nova ideia, um novo sabor e, com o tempo, em algo que hoje faz o maior sucesso.</p>
-            <p>E foi assim que nasceu um dos queridinhos do Doce da Yas.</p>
-          </article>
-          <article class="historia-slide">
-            <span class="fase">Gratidão por cada passo</span>
-            <h3>Meu coração só consegue agradecer.</h3>
-            <p>Hoje, quando olho para trás e vejo tudo que já aconteceu, meu coração só consegue agradecer.</p>
-            <p>Agradeço por cada cliente, cada encomenda, cada pessoa que acredita no nosso trabalho e por tudo que Deus já fez e continua fazendo.</p>
-            <p>Às vezes, Deus usa aquilo que não saiu como esperávamos para nos mostrar um caminho ainda melhor.</p>
-          </article>
-          <article class="historia-slide">
-            <span class="fase">A história continua</span>
-            <h3>Essa história está apenas começando.</h3>
-            <p>Por isso, não desista só porque algo deu errado. Continue tentando, aprendendo e acreditando no seu sonho.</p>
-            <p>O que hoje parece um erro pode, amanhã, se tornar sua maior conquista.</p>
-            <p>É um sonho que teve uma pausa, mas que nunca morreu.</p>
-          </article>
-        </div>
-      </div>
-      <button class="historia-nav historia-next" id="historia-next" aria-label="Próxima fase">&#8250;</button>
-      <div class="historia-dots" id="historia-dots"></div>
-      <p class="historia-count" id="historia-count">1 / 7</p>
-    </div>
-  </div>
-</section>
 
 <section class="menu" id="doces">
   <div class="wrap">
@@ -655,49 +535,6 @@
     window.addEventListener('scroll', onScroll, {passive:true});
     onScroll();
   } catch(err) { console.error('Header falhou:', err); }
-
-  // ---- Carrossel da história (só texto, sem timer) ----
-  try {
-    const track = document.getElementById('historia-track');
-    const slides = track ? track.querySelectorAll('.historia-slide') : [];
-    const prevBtn = document.getElementById('historia-prev');
-    const nextBtn = document.getElementById('historia-next');
-    const dotsWrap = document.getElementById('historia-dots');
-    const countEl = document.getElementById('historia-count');
-    let hi = 0;
-    function goHist(i){
-      if (!slides.length) return;
-      hi = (i + slides.length) % slides.length;
-      track.style.transform = 'translateX(-' + (hi * 100) + '%)';
-      if (dotsWrap) {
-        dotsWrap.querySelectorAll('button').forEach((d, n) => d.classList.toggle('active', n === hi));
-      }
-      if (countEl) countEl.textContent = (hi + 1) + ' / ' + slides.length;
-    }
-    if (track && slides.length) {
-      if (dotsWrap) {
-        dotsWrap.innerHTML = '';
-        slides.forEach((_, n) => {
-          const b = document.createElement('button');
-          b.type = 'button';
-          b.setAttribute('aria-label', 'Ir para a fase ' + (n + 1));
-          if (n === 0) b.classList.add('active');
-          b.addEventListener('click', () => goHist(n));
-          dotsWrap.appendChild(b);
-        });
-      }
-      if (prevBtn) prevBtn.addEventListener('click', () => goHist(hi - 1));
-      if (nextBtn) nextBtn.addEventListener('click', () => goHist(hi + 1));
-      let startX = 0;
-      track.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
-      track.addEventListener('touchend', (e)=>{
-        const diff = e.changedTouches[0].clientX - startX;
-        if (diff > 40) goHist(hi - 1);
-        else if (diff < -40) goHist(hi + 1);
-      });
-      goHist(0);
-    }
-  } catch(err) { console.error('Carrossel da história falhou:', err); }
 
   // ---- Splash de boas-vindas ----
   try {
