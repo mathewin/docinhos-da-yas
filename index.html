@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Cantinho Doce da Yas — Doce de leite artesanal</title>
 <meta name="description" content="Cremoso, artesanal e feito com amor. Tucumã/PA. Doce de leite feito à mão, sem pressa e sem receita de fábrica.">
 <link rel="canonical" href="https://cantinhodocedayas.shop/">
@@ -80,6 +80,7 @@
   .logo{
     font-family:'Caveat', cursive; font-weight:700; font-size:1.7rem; color:var(--ink);
     display:flex; align-items:center; gap:.65rem;
+    min-width:0; white-space:nowrap;
   }
   .logo-dot{
     width:34px; height:34px; border-radius:50%; overflow:hidden; flex:none;
@@ -102,17 +103,26 @@
   .nav-toggle{
     display:none; background:none; border:1px solid var(--line); color:var(--ink);
     font-size:1.2rem; width:44px; height:44px; border-radius:12px; cursor:pointer;
+    flex:none; align-items:center; justify-content:center; z-index:80;
   }
+  .nav-overlay{
+    position:fixed; inset:0; background:rgba(45,31,18,.42);
+    z-index:65; opacity:0; pointer-events:none;
+    transition:opacity .35s var(--ease);
+  }
+  .nav-overlay.open{opacity:1; pointer-events:auto;}
+  body.nav-open{overflow:hidden;}
   @media (max-width:820px){
+    nav{position:absolute; width:0; height:0; overflow:visible;}
     nav ul{
-      position:fixed; top:0; right:0; height:100vh; width:min(78vw,300px);
+      position:fixed; top:0; right:0; height:100dvh; width:min(82vw,320px);
       background:var(--panel); flex-direction:column; justify-content:center;
-      gap:2.2rem; padding:2.6rem; transform:translateX(100%); transition:transform .5s var(--ease);
-      box-shadow:var(--shadow-lg);
+      gap:1.8rem; padding:5.5rem 2.2rem 2.6rem; transform:translateX(100%);
+      transition:transform .5s var(--ease); box-shadow:var(--shadow-lg); z-index:70;
     }
     nav ul.open{transform:translateX(0);}
-    nav a{font-size:.9rem;}
-    .nav-toggle{display:block;}
+    nav a{font-size:.95rem; display:block; padding:.35rem 0;}
+    .nav-toggle{display:flex;}
   }
 
   /* ---------- hero ---------- */
@@ -163,7 +173,8 @@
   @media (max-width:900px){
     .hero{padding:0;}
     .hero-inner{grid-template-columns:1fr; gap:1.1rem; padding:1rem 0 1.2rem;}
-    .hero-photo{width:min(72vw, 280px);}
+    .hero-photo{width:min(72vw, 280px); margin:0 auto;}
+    .hero-story{text-align:center;}
     .marquee-top{margin-top:64px;}
   }
 
@@ -331,7 +342,53 @@
   @media (max-width:820px){
     section{padding:1.8rem 0;}
     .section-head{margin-bottom:1rem;}
-    .hero-photo{width:min(78vw, 260px);}
+    .hero-photo{width:min(78vw, 260px); margin:0 auto;}
+    header{
+      background:rgba(250,246,239,.94);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      padding-top:env(safe-area-inset-top);
+    }
+    .logo{font-size:1.28rem; gap:.45rem; flex:1;}
+    .header-inner{gap:.6rem;}
+    .cta-row{justify-content:center;}
+    .btn{width:100%; justify-content:center; text-align:center;}
+    .contact .cta-row{flex-direction:column; align-items:stretch; gap:.7rem;}
+    .contact .cta-row + .cta-row{margin-top:.7rem;}
+    .quote{font-size:clamp(1.15rem, 5.4vw, 1.5rem); padding:0 .2rem;}
+    .eyebrow{letter-spacing:.18em; font-size:.6rem;}
+    .menu-card:hover,.step:hover{transform:none;}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 1.1rem;}
+    .header-inner{padding:10px 1.1rem;}
+    header.scrolled .header-inner{padding:10px 1.1rem;}
+    .logo{font-size:1.12rem; gap:.4rem;}
+    .logo-dot{width:30px; height:30px;}
+    .marquee-top{margin-top:56px;}
+    .marquee{padding:.55rem 0;}
+    .marquee span{font-size:1.28rem; gap:1.1rem;}
+    .hero-inner{gap:.85rem; padding:.7rem 0 1rem;}
+    .hero-photo{width:min(86vw, 240px);}
+    .hero-story h2{font-size:1.45rem; margin-bottom:.65rem;}
+    .hero-story p{font-size:.92rem; line-height:1.65; margin-bottom:.65rem;}
+    .section-head h2{font-size:1.7rem;}
+    .section-head p{font-size:.95rem;}
+    .menu-card h3{font-size:1.05rem; margin:.75rem .8rem .25rem;}
+    .menu-photo{aspect-ratio:1/1;}
+    .steps{gap:.85rem;}
+    .step{padding:1.1rem 1rem;}
+    .reserva-banner{padding:1.15rem 1rem; margin-top:1.2rem;}
+    .reserva-banner h3{font-size:1.22rem;}
+    .btn{padding:.9rem 1.2rem; font-size:.7rem; letter-spacing:.1em;}
+    .contact h2{font-size:1.7rem;}
+    .contact p{font-size:.95rem;}
+    footer{padding:1rem 1.1rem; font-size:.75rem;}
+  }
+  @media (max-width:380px){
+    .logo{font-size:1rem;}
+    .hero-photo{width:min(92vw, 210px);}
+    .btn{padding:.85rem 1rem; font-size:.66rem;}
   }
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
@@ -347,16 +404,17 @@
       <span class="logo-dot"><img src="logo.jpeg" alt="Logo Cantinho Doce da Yas"></span>
       Cantinho <b>Doce da Yas</b>
     </div>
-    <button class="nav-toggle" aria-label="Abrir menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
     <nav>
-      <ul>
+      <ul id="menu-principal">
         <li><a href="#doces">Nossos doces</a></li>
         <li><a href="#pedido">Como pedir</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">☰</button>
   </div>
 </header>
+<div class="nav-overlay" id="nav-overlay"></div>
 
 <div class="marquee marquee-top" aria-hidden="true">
   <div class="marquee-track reverse">
@@ -587,6 +645,34 @@
     window.addEventListener('scroll', onScroll, {passive:true});
     onScroll();
   } catch(err) { console.error('Header falhou:', err); }
+
+  // ---- Menu mobile ----
+  try {
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('menu-principal');
+    const overlay = document.getElementById('nav-overlay');
+    const closeMenu = () => {
+      menu.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Abrir menu');
+    };
+    const openMenu = () => {
+      menu.classList.add('open');
+      overlay.classList.add('open');
+      document.body.classList.add('nav-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Fechar menu');
+    };
+    toggle.addEventListener('click', () => {
+      if (menu.classList.contains('open')) closeMenu();
+      else openMenu();
+    });
+    overlay.addEventListener('click', closeMenu);
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+  } catch(err) { console.error('Menu mobile falhou:', err); }
 </script>
 
 </body>
